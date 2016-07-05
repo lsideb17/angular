@@ -1,0 +1,50 @@
+<section class="regionpage">
+<search>
+<div class="search">
+    <label>Search</label>
+    <input ng-model="query" placeholder="search..." autofocus><!-- search bar -->
+           <label class="formgroup">:by
+        <select ng-model="regionOrder">
+            <option value="region_ID">region id</option><!-- rearrange list by region id -->
+               <option value="region_name">name</option><!-- rearrange list by region name -->
+               </select>
+    </label>	
+     <label class="formgroup">
+    <input type="radio" ng-model="direction" name="direction" >
+    ascending</label>
+    <label class="formgroup">
+    <input type="radio" ng-model="direction" name="direction" value="reverse"><!-- reverse direction of results -->
+    descending</label>    
+ </div>
+</search>
+	
+	 <div class="menu" id="tabs" >
+					<ul style="height:60px;">
+                        <li><a href="#/Cities">Cities</a></li>
+						<li><a href="#/Regions">Regions</a></li> 
+						<li><a href="#/Teams">Teams</a></li>
+						<li><a href="Map.html">Map</a></li>
+					</ul>					
+	</div> 
+<ul class="list">
+    <li class="region cf" ng-repeat="item in regions | filter: query | orderBy: regionOrder:direction">    <!-- List all the regions -->
+      <a href="#/Rdetails/{{regions.indexOf(item)}}"> 	 
+      	
+      <div class="info">	 
+          <h2>{{item.region_id}}</h2><!-- Display the region id -->
+        <h2>{{item.region_name}}</h2><!-- Display the region name -->
+        <h3>{{item.lat}}</h3><!-- Display the region latitude -->
+       <h3>{{item.long}}</h3><!-- Display the region longitude -->
+        <img ng-src="imagesUni/{{item.flag}}"><!-- Display the region flag -->
+		<img ng-src="imagesUni/{{item.location}}"><!-- Display the region location -->
+      </div>	   
+</a>		
+    </li>
+  </ul>
+  </section>
+  
+
+  
+  
+  
+ 

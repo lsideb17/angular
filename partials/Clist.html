@@ -1,0 +1,43 @@
+<section class="citypage">
+<search>
+<div class="search">    
+    <label>Search</label>
+    <input ng-model="query" placeholder="search..." autofocus>
+           <label class="formgroup">:by
+        <select ng-model="cityOrder">
+            <option value="city_id">city_id</option>
+               <option value="city_name">city_name</option>
+               <option value="region_id">region</option>
+               </select>        
+    </label>
+     <label class="formgroup">
+    <input type="radio" ng-model="direction" name="direction" >
+    asceding</label>
+    <label class="formgroup">
+    <input type="radio" ng-model="direction" name="direction" value="reverse">
+    desceding</label>    
+    </div>
+</search>
+    <div class="menu" id="tabs" >
+					<ul style="height:60px;">
+                        <li><a href="IndexCities.html">Cities</a></li>
+						<li><a href="IndexRegions.html">Regions</a></li>
+						<li><a href="index.html">Teams</a></li>
+				   </ul>					
+    </div>
+  <ul class="list">
+    <li class="city cf" ng-repeat="item in cities | filter: query | orderBy: cityOrder:direction">
+      <a href="#/details/{{cities.indexOf(item)}}"> 	
+      <div class="info">
+          <h2>{{item.city_id}}</h2>
+        <h2>{{item.city_name}}</h2>
+        <h3>{{item.region_id}}</h3>
+          <h3>{{item.lat}}</h3>
+        <h3>{{item.long}}</h3>
+		<img ng-src="imagesUni/{{item.image_1}}">
+        
+      </div>
+      </a>  
+    </li>
+  </ul>
+</section>

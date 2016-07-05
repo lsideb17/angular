@@ -1,0 +1,16 @@
+<section class="listinfo">
+  <div class="team cf" ng-model="teams">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
+    <h1>{{teams[whichItem].name}}</h1>
+    <div class="info">
+      <h3>{{teams[whichItem].stadium}}</h3>
+         <div class="bio">{{teams[whichItem].city_id}}</div>
+      <img ng-src="imagesUni/{{teams[whichItem].badge}}">
+        <img ng-src="imagesUni/{{teams[whichItem].image_1}}">
+        <img ng-src="imagesUni/{{teams[whichItem].image_2}}">
+    </div>
+  </div>
+  <a href="index.html">&laquo; Back to search</a>
+</section>
+

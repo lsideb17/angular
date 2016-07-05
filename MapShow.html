@@ -1,0 +1,38 @@
+<section class="teampage">
+<search>
+<div class="search">
+    <label>Search</label>
+    <input ng-model="query" placeholder="search..." autofocus>
+           <label class="formgroup">:by
+        <select ng-model="teamOrder">
+            <option value="ID">team_id</option>
+               <option value="name">name</option>
+               <option value="stadium">stadium</option>
+               </select>
+    </label>	
+     <label class="formgroup">
+    <input type="radio" ng-model="direction" name="direction" >
+    ascending</label>
+    <label class="formgroup">
+    <input type="radio" ng-model="direction" name="direction" value="reverse">
+    descending</label>    
+ </div>
+</search>
+	
+	 <div class="menu" id="tabs" >
+					<ul style="height:60px;">
+                        <li><a href="#/Cities">Cities</a></li>
+						<li><a href="#/Regions">Regions</a></li> 
+						<li><a href="#/Teams">Teams</a></li>
+						<li><a href="Map.html">Map</a></li>
+					</ul>					
+	</div> 
+      	 <div class="info">
+      
+        <ng-map center="[40.4637, 3.7492]"></ng-map><!-- Display region location on goggle maps -->
+    </div>
+    	   
+
+  </section>
+  
+ 

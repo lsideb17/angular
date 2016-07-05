@@ -1,0 +1,19 @@
+<section class="listinfo">
+  <div class="city cf" ng-model="cities">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
+    <h1>{{cities[whichItem].city_name}}</h1>
+    <div class="info">
+      <h3>{{cities[whichItem].region_id}}</h3>
+        <h3>{{cities[whichItem].lat}}</h3>
+        <h3>{{cities[whichItem].long}}</h3>
+         <div class="bio">{{cities[whichItem].city_id}}</div>
+        <img ng-src="imagesUni/{{cities[whichItem].image_1}}">
+        <img ng-src="imagesUni/{{cities[whichItem].image_2}}">
+        <img ng-src="imagesUni/{{cities[whichItem].image_3}}">
+        <ng-map center="[{{cities[whichItem].lat}}, {{cities[whichItem].long}}]"></ng-map>
+    </div>
+  </div>
+  <a href="indexCities.html">&laquo; Back to search</a>
+</section>
+

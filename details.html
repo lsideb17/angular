@@ -1,0 +1,25 @@
+	 <div class="menu" id="tabs" >
+					<ul style="height:60px;">
+                        <li><a href="#/Cities">Cities</a></li>
+						<li><a href="#/Regions">Regions</a></li> 
+						<li><a href="#/Teams">Teams</a></li>
+						<li><a href="Map.html">Map</a></li>
+					</ul>					
+	</div> 
+<section class="listinfo">
+  <div class="team cf" ng-model="teams">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a><!-- Go to previous record -->
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a><!-- Go to next record -->
+    <h1>{{teams[whichItem].name}}</h1><!-- display the team name -->
+    <div class="info">
+      <h3>{{teams[whichItem].stadium}}</h3><!-- display the team stadium -->
+         <div class="bio">"City Id - "{{teams[whichItem].city_id}}</div><!-- display the city id -->
+      <img ng-src="imagesUni/{{teams[whichItem].badge}}"><!-- display the team badge -->
+	   <img ng-src="imagesUni/{{teams[whichItem].strips}}"><!-- display the team strips -->
+        <img ng-src="imagesUni/{{teams[whichItem].image_1}}"><!-- display the image 1 of the team -->
+        <img ng-src="imagesUni/{{teams[whichItem].image_2}}"><!-- display the image 2 of the team -->
+    </div>
+  </div>
+<a href="#/Teams">&laquo; Back to search</a><!-- Return to the list -->
+</section>
+

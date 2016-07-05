@@ -1,0 +1,57 @@
+<section class="teampage">
+<search>
+<div class="search">
+    <label>Search</label>
+    <input ng-model="query" placeholder="search..." autofocus><!-- search bar -->
+           <label class="formgroup">:by
+        <select ng-model="teamOrder">
+            <option value="ID">team_id</option><!-- rearrange list by team id -->
+               <option value="name">name</option><!-- rearrange list by team name -->
+               <option value="stadium">stadium</option><!-- rearrange list by stadium name -->
+               </select>
+    </label>	
+     <label class="formgroup">
+    <input type="radio" ng-model="direction" name="direction" >
+    ascending</label>
+    <label class="formgroup">
+    <input type="radio" ng-model="direction" name="direction" value="reverse"><!-- reverse direction of results -->
+    descending</label>    
+ </div>
+</search>
+<!-- <div class="menu" id="tabs" >
+					<ul style="height:60px;">
+                        <li><a href="IndexCities.html">Cities</a></li><!-- Go to the cities records 
+						<li><a href="IndexRegions.html">Regions</a></li> <!-- Go to the regions  
+						<li><a href="index.html">Teams</a></li><!-- Go to the team 
+						<li><a href="map.html">Map</a></li><!-- Go to the map 
+					</ul>					
+	</div> -->
+	
+	 <div class="menu" id="tabs" >
+					<ul style="height:60px;">
+                        <li><a href="#/Cities">Cities</a></li>
+						<li><a href="#/Regions">Regions</a></li> 
+						<li><a href="#/Teams">Teams</a></li>
+						<li><a href="Map.html">Map</a></li>
+					</ul>					
+	</div> 
+	
+<ul class="list">
+    <li class="team cf" ng-repeat="item in teams | filter: query | orderBy: teamOrder:direction"> <!-- List all the teams -->    
+      <a href="#/Tdetails/{{teams.indexOf(item)}}"> 	 
+      	
+      <div class="info">	 
+          <h2>{{item.team_id}}</h2><!-- Display the team id -->
+        <h2>{{item.name}}</h2><!-- Display the team name -->
+        <h3>{{item.stadium}}</h3><!-- Display the name of the team stadium -->
+          <h3>{{item.city_id}}</h3><!-- Display the team  -->
+          <img ng-src="imagesUni/{{item.strips}}"  ><!-- Display the team strips -->
+		  <img ng-src="imagesUni/{{item.badge}}"><!-- Display the team badge -->
+        
+      </div>	   
+</a>		
+    </li>
+  </ul>
+  </section>
+  
+ 

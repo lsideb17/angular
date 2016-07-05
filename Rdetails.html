@@ -1,0 +1,28 @@
+	 <div class="menu" id="tabs" >
+					<ul style="height:60px;">
+                        <li><a href="#/Cities">Cities</a></li>
+						<li><a href="#/Regions">Regions</a></li> 
+						<li><a href="#/Teams">Teams</a></li>
+						<li><a href="Map.html">Map</a></li>
+					</ul>					
+	</div> 
+<section class="listinfo">
+  <div class="region cf" ng-model="regions">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a><!-- Go to previous record -->
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a><!-- Go to next record -->
+    <h1>{{regions[whichItem].region_name}}</h1> <!-- Display region name -->
+    <div class="info">
+      <h3>{{regions[whichItem].region_id}}</h3><!-- Display region id -->
+      <h3>{{regions[whichItem].lat}}</h3><!-- Display region latitude -->
+        <h3>{{regions[whichItem].long}}</h3><!-- Display region longitude -->
+         <div class="bio">
+        <img ng-src="imagesUni/{{regions[whichItem].flag}}"><!-- Display region flag -->
+        <img ng-src="imagesUni/{{regions[whichItem].location}}"><!-- Display region location -->
+      <img ng-src="imagesUni/{{regions[whichItem].image_1}}"><!-- display the image 1 of the region  -->
+        <img ng-src="imagesUni/{{regions[whichItem].image_2}}"><!-- display the image 2 of the region  -->
+        <img ng-src="imagesUni/{{regions[whichItem].image_3}}"><!-- display the image 3 of the region  -->
+             <ng-map center="[{{regions[whichItem].lat}}, {{regions[whichItem].long}}]"></ng-map><!-- Display region location on goggle maps -->
+    </div>
+  </div>
+<a href="#/Regions">&laquo; Back to search</a> Return to the list -->
+</section>

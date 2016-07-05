@@ -1,0 +1,27 @@
+	 <div class="menu" id="tabs" >
+					<ul style="height:60px;">
+                        <li><a href="#/Cities">Cities</a></li>
+						<li><a href="#/Regions">Regions</a></li> 
+						<li><a href="#/Teams">Teams</a></li>
+						<li><a href="Map.html">Map</a></li>
+					</ul>					
+	</div> 
+<section class="listinfo">
+  <div class="city cf" ng-model="cities">
+    <a href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a><!-- Go to previous record -->
+    <a href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a><!-- Go to next record -->
+    <h1>{{cities[whichItem].city_name}}</h1><!-- display the city name -->
+    <div class="info">
+      <h3>{{cities[whichItem].region_id}}</h3><!-- display the region id -->
+        <h3>{{cities[whichItem].lat}}</h3><!-- display the city longitude -->
+        <h3>{{cities[whichItem].long}}</h3><!-- display the city longitude -->
+         <div class="bio">"city id - {{cities[whichItem].city_id}}"</div><!-- display the city id -->
+        <img ng-src="imagesUni/{{cities[whichItem].image_1}}"><!-- display the image 1 of the city  -->
+        <img ng-src="imagesUni/{{cities[whichItem].image_2}}"><!-- display the image 2 of the city  -->
+        <img ng-src="imagesUni/{{cities[whichItem].image_3}}"><!-- display the image 3 of the city  -->
+        <ng-map center="[{{cities[whichItem].lat}}, {{cities[whichItem].long}}]"></ng-map><!-- Display region location on goggle maps -->
+    </div>
+  </div>
+ <a href="#/Cities">&laquo; Back to search</a><!-- Return to the list -->
+</section>
+
